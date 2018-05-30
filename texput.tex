@@ -1,0 +1,703 @@
+\title{Audacity}
+
+\maketitle
+\tableofcontents
+
+\chapter{Foundations}
+
+\section{Features (and limitations)}
+
+\begin{itemize}
+\item Most common audio formats are supported (some of them directly
+  such as Ogg Vorbis, WAV (Windows wave), FLAC (Free Lossless Audio
+  Codec) or AIFF (Macinthosh Audio Interchange File Format) ... and
+  others such as MP3 (by means of LAME) or AAC (by means of FFMPEG)).
+\item Sample precission can be 16, 24 or 32 bits/sample. Therefore, it
+  cannot capture 8 bits/sample and therefore, use logarithmic
+  quantization. However, it can export these formats throught
+  \href{http://www.mega-nerd.com/libsndfile/}{libsndfile}.
+\item Several audio effects.
+\item Expandable using plug-ins from
+  \href{http://www.ladspa.org/}{LADSPA (Linux Audio Developer's Simple
+    Plugin Api)} and writting plug-ins using
+  \href{http://manual.audacityteam.org/o/man/nyquist_prompt.html}{the
+    Nyquist programming language}.
+\item Several analysis tools.
+\item It is cross-platform and free
+  (\href{http://audacity.sourceforge.net/about/license}{GPL})!
+\end{itemize}
+
+\section{Terminology}
+
+\begin{itemize}
+\item
+  \href{http://manual.audacityteam.org/o/man/audacity_projects.html}{\textbf{Project}}:
+  A collection of tracks, clips, labels, amplitude envelope points,
+  gain and pan data.
+
+\item \href{http://manual.audacityteam.org/o/man/tracks.html}{\textbf{Track}}:
+  A sequence of audio samples.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/audacity_tracks_and_clips.html}{\textbf{Clip}}:
+  A pieze of a track.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/label_tracks.html}{\textbf{Label}}:
+  A name for a collection of samples of a track.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/envelope_tool.html}{\textbf{Amplitude
+      envelope point}}: A way to control the amplitude of a track
+  along time.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/glossary.html#gain}{\textbf{Gain}}:
+  A measure of how much a signal is amplified. 0 dB means not
+  amplification nor attenuation.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/glossary.html#pan}{\textbf{Pan}}:
+  Controls the spread of a stereo sound into the stereo channel.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/sync_locked_track_groups.html}{\textbf{Sync-Locked
+    Track Groups}}: lets you keep existing audio or labels synchronized
+  with each other even when carrying out actions like inserting,
+  deleting or changing speed or tempo.
+
+\item \textbf{Stereo track}: a 2-channel track where each channel is a
+  independent audio signal.
+
+\item \textbf{Mono track}: a 2-channel track where there is only one
+  audio signal (the same for each channel).
+
+\item \textbf{Left/Right track}: a 1-channel track with data for, only, the
+  left/right channel.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/label_tracks.html}{\textbf{Label
+    track}}: Used to reference points or regions in the project's audio
+  tracks.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/time_tracks.html}{\textbf{Time
+    track}}: It is used in conjunction with one or more audio tracks to
+  progressively increase or decrease playback speed (and pitch) over
+  the length of the audio project (only one Time traks per project is
+  allowed).
+
+\item
+  \href{http://manual.audacityteam.org/o/man/playing_and_recording.html}{\textbf{Playback
+    Region}}: a track region associated with a shaded selection region
+  in the waveform which is indicated in the timeline by a thin
+  horizontal gray bar with arrowheads on each end.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/faq_recording_how_to_s.html#overdub}{\textbf{Overdubbing}}:
+  is the process of record sound while the existing tracks are played.
+
+\item \textbf{Speed}: The number of samples/second played.
+
+\item \textbf{Tempo}: It refeers to the playing time but not changing the pitch.
+
+\item
+  \href{http://manual.audacityteam.org/o/man/glossary.html#pitch}{\textbf{Pitch}}:
+  The fundamental (first one) frequency of a sound (usually, a music
+  note).
+
+\end{itemize}
+
+\chapter{\href{http://manual.audacityteam.org/o/man/index\_of\_effects\_generators\_and\_analyzers.html\#generators}{Synthesis (Generate Menu)}}
+
+\section{\href{http://manual.audacityteam.org/o/man/generate_menu.html\#tone}{Tones}}
+\begin{enumerate}
+\item It is possible to generate pure tones (\verb|Generate->Tone|):
+  \begin{enumerate}
+  \item \textbf{Sine}: A mathematical sine function.
+  \item \textbf{Square}: A pure periodic squared window
+    function. Notice that this ``tone'' is physically impossible.
+  \item \textbf{Square (no alias)}: Similar to the Square wave but
+    does not produce aliasing distortion.
+  \item \textbf{Sawtooth}: Has a gradual upwards slope followed by a shorter downwards slope. 
+  \end{enumerate}
+\item And time-decaying tones
+  (\verb|Generate -> |\href{http://manual.audacityteam.org/o/man/generate_menu.html#chirp}{\texttt{Chirp}}). Using
+  this option you can define a change in the frequency and the
+  amplitude.
+\end{enumerate}
+
+\section{\href{http://manual.audacityteam.org/o/man/generate_menu.html\#dtmf}{Dual-Tone Multi-Frequency (DTMF) tones}}
+\begin{itemize}
+\item \verb|Generate -> DTMF Tones|.
+\item For each tone you wish to generate, enter numbers from 0 to 9,
+  lower case letters from a to z, and the * and \# characters. You can
+  also enter the four ``priority'' tones used by the US Military
+  (upper case A, B, C and D). Use the slider to select the ratio
+  between the length of each tone in the series and the length of the
+  silences between them.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/generate_menu.html\#noise}{Noise}}
+\begin{itemize}
+\item \verb|Generate -> Noise|.
+\item Generates
+  \href{http://en.wikipedia.org/wiki/White_noise}{white},
+  \href{http://en.wikipedia.org/wiki/Pink_noise}{pink} and
+  \href{http://en.wikipedia.org/wiki/Brownian_noise}{brownian} noise
+  during a period of time. Notice that these noises have a different
+  frequency composition.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/generate_menu.html\#silence}{Silence}}
+\begin{itemize}
+\item \verb|Generate -> Silence|.
+\item Generates an ausence of signal during aperiod or time.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/click_track.html}{Clicks train}}
+\begin{itemize}
+\item \verb|Generate -> Click Track|.
+\item Generates a sequence of regular pulses at the selected tempo.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/pluck.html}{Pluck}}
+\begin{itemize}
+\item \verb|Generate -> Pluck|.
+\item Generates a synthesized pluck tone with abrupt or gradual
+  fade-out, and selectable pitch corresponding to a MIDI note.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/risset_drum.html}{Risset Drum}}
+\begin{itemize}
+\item \verb|Generate -> Risset Drum|.
+\item Produces a sound based on work by the composer of electronic
+  music, Jean Claude Risset.
+\end{itemize}
+
+\chapter{Recording and playing}
+
+\section{Sound driver selection}
+\begin{itemize}
+\item By default, in Linux, Audacity will use ALSA which is the best
+  choice for avoiding latency issues during capturing audio.
+\end{itemize}
+
+\section{Input (recording) and output (playing) selection}
+\begin{itemize}
+\item Depending on your audio hardware, a number of input devices are
+  available. Again, in Linux systems, ALSA native ``\texttt{hw}'' devices
+  should minimize latency problems.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/transport_toolbar.html}{The Transport Toolbar}}
+\begin{itemize}
+\item The
+  \href{http://manual.audacityteam.org/o/man/playing_and_recording.html}{Transport
+    Toolbar} is the easiest way to control Audacity playback and
+  recording. From left to right we found:
+\begin{enumerate}
+\item The \textbf{Pause} Button: press once to pause playback or
+  recording then once to resume.
+\item The \textbf{Play} Button: press once to start playback from the
+  beggining.
+\item The \textbf{Stop} Button: interrupts the playing/recording.
+\item The \textbf{Skip to Start} Button: moves the time cursor to the
+  start of the project.
+\item The \textbf{Skip to End} Button: moves the time cursor to the
+  end of the project.
+\item The \textbf{Record} Button: start a new audio capture (you must
+  push Stop to stop this process).
+\end{enumerate}
+\end{itemize}
+
+\section{Using keyboard shorcuts}
+\begin{enumerate}
+\item \textbf{P}: Pause.
+\item \textbf{SPACE}: Plays or stop.
+\item \textbf{SHIFT+SPACE}: Plays in a loop.
+\item \textbf{HOME}: Skip to Start.
+\item \textbf{END}: Skip to End.
+\item \textbf{R}: Record.
+\item \textbf{SHIFT+R} or \textbf{SHIFT+Record}: Append-Record. Record
+  starting from the end of the selected (previously existing)
+  track(s).
+\item \textbf{SHIFT+A}: Stop and set cursor. When stop a playback or a
+  recording, the cursor or start of the selection is set to the
+  position where playback/recording was stopped.
+\end{enumerate}
+
+\section{\href{http://manual.audacityteam.org/o/man/latency_test.html}{Measuring your latency}}
+\begin{itemize}
+\item Latency is an issue that depends mainly on your hardware (sound
+  device and computer) and your audio buffer size %
+  (\verb|Edit -> Preferences -> Recording -> Audio to buffer|).
+\item In order to minimize the latency, you can improve your hardware
+  and/or reduce the audio buffer size. However, reducing the audio
+  buffer size can produce underruns in the capturing process if the
+  CPU is not able to manage this configuration requirement.
+\item When overdubbing (see Section~\ref{sec:overdubbing}), you must
+  measure and set your current lantency in %
+  \verb|Edit -> Preferences -> Recording -> Latency Correction|,
+  otherwise those audio tracks that have been previously captured will
+  be the synchronized with the new ones.
+\item To find out your latency you must capture a sound produced by
+  your computer and compute the delay between the time the sound has
+  been produced and the time the sound has been captured. To do this:
+  \begin{enumerate}
+  \item In Selection Toolbar make sure that "\verb|Snap To|" is set to
+    "\verb|Off|".
+  \item Above the second group of numbers, make sure that
+    ``\verb|Length|'' is selected.
+  \item Click on one of the downward-pointing arrows in the digits
+    boxes to the right of ``\verb|Snap To|'' and select
+    ``\verb|hh:mm:ss + milliseconds|''.
+  \item Generate 2 bars of click track %
+    (\verb|Generate -> Click Track|), and choose the default
+    ``\verb|Ping|'' sound.
+  \item Click ``\verb|OK|'' to generate the click track.
+  \item Now click the Record Button in the Transport Toolbar.
+  \item You will get a new track. The top track is the original click
+    track, the bottom track is the looped-back recording.
+  \item Zoom in so you can see one of the clicks in the top track and
+    its delayed version on the bottom track.
+  \item You can now read the latency directly from the second panel of
+    numbers.
+  \item Write in the
+    \verb|Edit -> Preferences -> Recording tab -> Latency Correction|
+    Entry the negative of this number.
+  \item Repeat this experiment to check if the latency when
+    overdubbing has been ``hidden''.
+  \end{enumerate}
+\end{itemize}
+
+\section{Timer recording}
+\begin{itemize}
+\item The \verb|Transport -> Timer Record| Dialog allows to configure
+  a temporized recording (starting date and time and duration).
+\end{itemize}
+
+\section{Playing slower/faster}
+\begin{itemize}
+\item Use the
+  \href{http://manual.audacityteam.org/o/man/transcription_toolbar.html}{Transcription
+    Toolbar} to change the playing speed.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/time_tracks.html}{Time warping}}
+\begin{itemize}
+\item Progressively increase or decrease playback speed (and pitch).
+\end{itemize}
+
+\section{Overdubbing}
+\label{sec:overdubbing}
+\begin{itemize}
+\item By default, Audacity record and plays tracks simultaneously. See %
+  \verb|Transport -> Overdub (on/off)|.
+\end{itemize}
+
+\chapter{\href{http://manual.audacityteam.org/o/man/index_of_effects_generators_and_analyzers.html\#analyzers}{Analysis (Analyze Menu)}}
+
+\section{\href{http://manual.audacityteam.org/o/man/contrast.html}{Contrast}}
+\begin{itemize}
+\item \verb|Analyze -> Contrast|.
+\item Can be used to compare the audio level of two different parts of
+  a mono track. Suppossing that one of the parts is the
+  \emph{foreground} (that obviously also has a background noise) and
+  the other is the \emph{backgroud} (with only background noise), this
+  analysis can be useful to know if there is enoung signal (20 dB or
+  more) in the foreground section compared to the background section.
+\item Procedure:
+  \begin{enumerate}
+  \item Select a region containing the signal (speech, for
+    example). This is the "foreground" selection.
+  \item Click the ``\verb|Foreground|'''s ``\verb|Measure selection|'' Button.
+  \item Select a region containing only the background sound. This is
+    the background selection.
+  \item Click the ``\verb|Background|'''s ``\verb|Measure selection|'' Button.
+  \end{enumerate}
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/find_clipping.html}{Clipping ocurrency}}
+\begin{itemize}
+\item \verb|Analyze -> Find Clipping|.
+\item Displays runs of clipped samples in a Label Track.
+\item You can control the length of the clipped runs (default 3
+  samples) and the number of unclipped samples (default also 3) that
+  must occur before a sun of clipped samples will be determined.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/plot_spectrum.html}{Frequency analysis}}
+\begin{itemize}
+\item \verb|Analyze -> Plot spectrum|.
+\item Graphs the spectral density function of the sound.
+\item You can choose between:
+  \begin{enumerate}
+  \item \textbf{Spectral analysis}: A genuine Fourier analysis.
+  \item \textbf{Autocorrelation}: A measure of the redundancy of the signal.
+  \item \textbf{Cepstrum}: The power cepstrum $C$ (of a signal) is the
+    squared magnitude of the Fourier transform of the logarithm of the
+    squared magnitude of the Fourier transform of a
+    signal. Mathematically:
+    \begin{equation*}
+      C=|{\cal{F}}^{-1}(\log_2(|{\cal{F}}|^2)))|^2
+    \end{equation*}
+    Physically, the cepstum resents the rate of change in the
+    different spectrum bands. It's particularly useful for properties
+    of vocal tracks and is used, for example, to identify speakers by
+    their voice characteristics.
+  \end{enumerate}
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/beat_finder.html}{Localize beats}}
+\begin{itemize}
+\item \verb|Analyze -> Beat Finder|.
+\item Place labels at beats which are much louder than the surrounding
+  audio.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/regular_interval_labels.html}{Track splitting}}
+\begin{itemize}
+\item \verb|Analyze -> Regular Interval Labels|.
+\item Places point labels in a label track so as to divide the
+  associated audio into smaller, equally-sized segments.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/silence_finder_and_sound_finder.html\#silence}{Silence finder}}
+\begin{itemize}
+\item \verb|Analyze -> Silence Finder|.
+\item Divides up a track by placing point labels inside areas of silence.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/silence_finder_and_sound_finder.html\#sound}{Sound finder}}
+\begin{itemize}
+\item \verb|Analyze -> Sound Finder|.
+\item Divides up a track by placing region labels for areas of sound
+  that are separated by silence.
+\end{itemize}
+
+\chapter{Editing (Edit View and Tracks Menus)}
+
+\section{Creating a new tracks}
+\begin{itemize}
+\item \textbf{Mono track}: go to %
+  \verb|Tracks -> Add new -> Audio Track|.
+\item \textbf{Stereo track}: go to %
+  \verb|Tracks -> Add new -> Stereo Track|.
+\item \textbf{Label track}: go to % 
+  \verb|Tracks -> Add new -> Label Track|.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/splitting_and_joining_stereo_tracks.html}{Splitting and joining tracks}}
+\begin{itemize}
+\item Using the
+  \href{http://manual.audacityteam.org/o/man/track_drop_down_menu.html}{Track
+    Drop-Down menu} you can:
+  \begin{enumerate}
+  \item Split a stereo track into separate tracks for left and right
+    channels after choosing
+    \verb|Track Drop-Down -> Split Stereo Track|.
+  \item Split a stereo track into two separate mono tracks after
+    selecting
+    \verb|Track Drop-Down -> Stereo to Mono|.
+  \item Swap the channels in a stereo track.
+  \item
+    \href{http://manual.audacityteam.org/o/man/audio_tracks.html}{Join
+      two mono, left or right tracks into one stereo track}, by
+    selecting \verb|Track Drop-Down -> Make Stereo Track|..
+  \end{enumerate}
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/tracks_menu.html\#mix}{Mixing tracks}}
+\begin{itemize}
+\item When you reproduce (push the Play Button) a project, all tracks
+  are mixed together in order to play them, but you don't have a track
+  that can be written into a stereo audio file with the result of our
+  project.
+\item The \verb|Mix and Render| Option of the \verb|Tracks| Menu
+  explicitly mixes down all selected tracks to a single mono or stereo
+  track.  The resulting track (called ``\verb|Mix|'') replaces the
+  selected tracks and is placed underneath any tracks that were not
+  mixed and rendered.
+\item It is possible also to mix and render to a new track by using
+  CTRL+SHIFT+M.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/zooming.html}{Zooming the time scale}}
+\begin{itemize}
+\item To zoom in, position the mouse pointer over a track and
+  left-click. To zoom out, shift-click or click the right mouse
+  button.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/zooming.html}{Zooming the amplitude scale}}
+\begin{itemize}
+\item Hover the mouse over the vertical ruler of a track, and the
+  pointer changes to a magnifying glass, indicating you can zoom
+  vertically.
+\end{itemize}
+
+%\section{Track aligning}
+
+\section{Resampling}
+
+\begin{itemize}
+\item Resampling is usually used to match a given audio format (such
+  as the CD quality audio).
+\item However, resampling increments the number of samples (and
+  therefore the amount of memory) but not increases the quality of the
+  sound.
+\end{itemize}
+
+\subsection{\href{http://manual.audacityteam.org/o/man/tracks_menu.html\#mix}{Project resampling}}
+\begin{itemize}
+\item \verb|Tracks -> Resample| ...  and select the new sampling rate.
+\end{itemize}
+
+\subsection{Track resampling}
+\begin{itemize}
+\item \verb|Audio Track Pop-up -> Set Rate| ... and select the new sampling rate.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/repeat.html}{Repeat}}
+\begin{itemize}
+\item \verb|Effect -> Repeat|.
+\item Repeats the selection the specified number of times. 
+\end{itemize}
+
+\chapter{Built-in Amplitude effects (Effects Menu)}
+%\begin{itemize}
+%\item Make the sound louder or quieter
+%\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/amplify.html}{Scaling (amplification/atenuation)}}
+\begin{itemize}
+\item \verb|Effect -> Amplify -> Amplification (dB)|.
+\item Similar to move the potentiometer of your amplifier.
+\item In a stereo track, the balance between the left and right
+  channels will be preserved.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/normalize.html}{Normalization}}
+\begin{itemize}
+\item \verb|Effect -> Normalize -> Normalize maximum amplitude to|.
+\item Similar to
+  \href{http://manual.audacityteam.org/o/man/amplify_and_normalize.html}{scaling},
+  but removes the DC offset.
+\item In a stereo track, the balance between the left and right
+  channels can be preserved (uncheck Normalize stereo channel
+  independetly).
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/fades.html\#linearfade}{Fadding}}
+\begin{itemize}
+\item \texttt{Effect -> Fade In | Fade Out |
+    \href{http://manual.audacityteam.org/o/man/adjustable_fade.html}{Adjustable
+      Fade}}.
+\item Produces smooth starts and finishes in the audio tracks. 
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/auto_duck.html}{Temporal amplitude attenuation (duck)}}
+\begin{itemize}
+\item \verb|Effect -> Duck|.
+\item Reduces (ducks) the volume of one or more selected tracks
+  whenever the volume of a specified "control track" reaches a
+  particular threshold level.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/compressor.html}{Compression}}
+\begin{itemize}
+\item \verb|Effect -> Compressor|.
+\item Reduces the dynamic range of audio, ampliying the quiet sounds.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/hard_limiter.html}{Hard Limiter}}
+\begin{itemize}
+\item \verb|Effect -> Hard Limiter|.
+\item Such as the Compression Effect, although clipping can happen.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/leveler.html}{Leveler}}
+\begin{itemize}
+\item \verb|Effect -> Leveler|.
+\item A simple, combined compressor and limiter effect for reducing
+  the dynamic range of audio. It reduces the difference between loud
+  and soft, making the audio easier to hear in noisy environments or
+  on small loudspeakers.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/sc4.html}{SC4}}
+\begin{itemize}
+\item \verb|Effect -> SC4|.
+\item Another stereo compressor.
+\end{itemize}
+
+%\chapter{Quality effects}
+%\begin{itemize}
+%\item Change the quality of the sound.
+%\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/bass_and_treble.html}{Bass and Treble}}
+\begin{itemize}
+\item \verb|Effect -> Bass and Treble|.
+\item Increases or decreases the lower frequencies and higher
+  frequencies of your audio independently.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/change_pitch.html}{Change Pitch}}
+\begin{itemize}
+\item \verb|Effect -> Change Pitch|.
+\item Change the pitch of a track without changing its tempo (speed).
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/equalization.html}{Equalization}}
+\begin{itemize}
+\item \verb|Effect -> Equalization|.
+\item Allows you to increase the volume of some frequencies and reduce others.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/high_pass_filter.html}{High Pass Filter}}
+\begin{itemize}
+\item \verb|Effect -> High Pass Filter|.
+\item Removes frequencies above the cutoff frequency.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/low_pass_filter.html}{Low Pass Filter}}
+\begin{itemize}
+\item \verb|Effect -> Low Pass Filter|.
+\item Removes frequencies below the cutoff frequency.
+\end{itemize}
+
+% Tal vez se puede mover a otro capitulo
+\section{\href{http://manual.audacityteam.org/o/man/paulstretch.html}{Paulstretch}}
+\begin{itemize}
+\item \verb|Effect -> Paulstretch|.
+\item Slow down audio without changing the pitch.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/phaser.html}{Phaser}}
+\begin{itemize}
+\item \texttt{Effect -> \href{http://en.wikipedia.org/wiki/Phaser\_(effect)}{Phaser}}.
+\item Displaces frequencies of the audio and the displacement is
+  controlled by a low frequency sine signal.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/tremolo.html}{Tremolo}}
+\begin{itemize}
+\item \verb|Effect -> Tremolo|.
+\item Is the variation of the amplitude of the sound controlled by a
+  sine signal (amplitude modulation).
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/vocoder.html}{Vocoder}}
+\begin{itemize}
+\item \verb|Effect -> Vocoder|.
+\item Modulates the left channel of a stereo track with the right channel and viceversa.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/wahwah.htm}{Wahwah}}
+\begin{itemize}
+\item \verb|Effect -> Wahwah|.
+\item Uses a moving (back and forth in the frequency) bandpass filter
+  to create its sound controlled by a low frequency oscillator.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/click_removal.html}{Declicking}}
+\begin{itemize}
+\item \verb|Effect -> Click Removal|.
+\item Remove clicks (especially suited for those procuced by vinyl records) without damaging the rest of the audio.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/clip_fix.html}{Reconstruct clipped regions}}
+\begin{itemize}
+\item \verb|Effect -> Clip Fix|.
+\item Reconstruct clipped regions by interpolating the lost signal.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/noise_removal.html}{Noise Removal}}
+\begin{itemize}
+\item \verb|Effect -> Noise Removal|.
+\item Reduce constant background sounds such as ``hum'' (zumbido),
+  ``whistle'' (silvido), ``whine'' (gemido) or ``buzz'' (rumor), and
+  moderate amounts of ``hiss'' (siseo).
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/notch_filter.html}{Notch Filter}}
+\begin{itemize}
+\item \verb|Effect -> Notch Filter|.
+\item Sharply attenuates frequency-specific noise like mains hum or
+  electrical whistle with minimal damage to the remaining audio.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/repair.html}{Repair}}
+\begin{itemize}
+\item \verb|Effect -> Repair|.
+\item Removes a very short region (up to 128 samples) of damaged or
+  destroyed audio, replacing it with an estimated region of audio
+  based on what is happening either side of the region.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/truncate_silence.html}{Truncate Silence}}
+\begin{itemize}
+\item \verb|Effect -> Truncate Silence|.
+\item Reduces the length of passages where the volume is below a specified level.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/change_tempo.html}{Change Tempo}}
+\begin{itemize}
+\item \verb|Effect -> Change Tempo|.
+\item Change the tempo of the selection without changing its pitch.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/change_speed.html}{Change Speed}}
+\begin{itemize}
+\item \verb|Effect -> Change Speed|.
+\item Change the speed of a track, affecting its tempo, pitch and
+  frequency content.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/sliding_time_scale_pitch_shift.html}{Sliding Time Scale / Pitch Shift}}
+\begin{itemize}
+\item \verb|Effect -> Sliding Time Scale| / verb|Pitch Shift|.
+\item Make a continuous change to the tempo and/or pitch of a
+  selection by choosing initial and/or final change values.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/delay.html}{Delay}}
+\begin{itemize}
+\item \verb|Effect -> Delay|.
+\item A multiple echo effect.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/echo.html}{Echo}}
+\begin{itemize}
+\item \verb|Effect -> Echo|.
+\item Repeats the audio you have selected again and again, normally softer each time.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/reverb.html}{Reverb}}
+\begin{itemize}
+\item \verb|Effect -> Reverb|.
+\item Adds reverberation (rapid, modified repetitions blended with the
+  original sound that gives an impression of ambience).
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/invert.html}{Invert}}
+\begin{itemize}
+\item \verb|Effect -> Invert|.
+\item Flips the audio samples upside-down, reversing their
+  polarity. Notice that if you play the original and the inverted
+  audio together, both tracks will be substracted.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/reverse.html}{Reverse}}
+\begin{itemize}
+\item \verb|Effect -> Reverse|.
+\item Reverses the selected audio.
+\end{itemize}
+
+\section{\href{http://manual.audacityteam.org/o/man/nyquist_prompt.html}{Nyquist Prompt}}
+\begin{itemize}
+\item \verb|Effect -> Nyquist Prompt|.
+\item Write your own plug-ins created using the Nyquist programming language.
+\end{itemize}

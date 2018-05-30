@@ -1,0 +1,1546 @@
+<!DOCTYPE html> 
+<html> 
+<head> <title>Audacity</title> 
+<meta charset="UTF-8" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<link rel="stylesheet" type="text/css" href="index.css" /> 
+<script type="text/javascript" 
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" 
+></script> 
+<style type="text/css"> 
+.MathJax_MathML {text-indent: 0;} 
+</style> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                  
+
+                                                                  
+
+<h2 class="titleHead">Audacity</h2>
+ <div class="author" ><span 
+class="ecrm-1200">Vicente Gonz</span><span 
+class="ecrm-1200">á</span><span 
+class="ecrm-1200">lez Ruiz</span></div><br />
+<div class="date" ><span 
+class="ecrm-1200">May 30, 2018</span></div>
+                                                                  
+
+                                                                  
+   </div>
+                                                                  
+
+                                                                  
+   <h2 class="likechapterHead"><a 
+ id="x1-1000"></a>Contents</h2> <div class="tableofcontents">
+   <span class="chapterToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">Foundations</a></span>
+<br />    <span class="sectionToc" >1.1 <a 
+href="#x1-30001.1" id="QQ2-1-3">Features (and limitations)</a></span>
+<br />    <span class="sectionToc" >1.2 <a 
+href="#x1-40001.2" id="QQ2-1-4">Terminology</a></span>
+<br />   <span class="chapterToc" >2 <a 
+href="#x1-50002" id="QQ2-1-5">Synthesis (Generate Menu)</a></span>
+<br />    <span class="sectionToc" >2.1 <a 
+href="#x1-60002.1" id="QQ2-1-6">Tones</a></span>
+<br />    <span class="sectionToc" >2.2 <a 
+href="#x1-70002.2" id="QQ2-1-7">Dual-Tone Multi-Frequency (DTMF) tones</a></span>
+<br />    <span class="sectionToc" >2.3 <a 
+href="#x1-80002.3" id="QQ2-1-8">Noise</a></span>
+<br />    <span class="sectionToc" >2.4 <a 
+href="#x1-90002.4" id="QQ2-1-9">Silence</a></span>
+<br />    <span class="sectionToc" >2.5 <a 
+href="#x1-100002.5" id="QQ2-1-10">Clicks train</a></span>
+<br />    <span class="sectionToc" >2.6 <a 
+href="#x1-110002.6" id="QQ2-1-11">Pluck</a></span>
+<br />    <span class="sectionToc" >2.7 <a 
+href="#x1-120002.7" id="QQ2-1-12">Risset Drum</a></span>
+<br />   <span class="chapterToc" >3 <a 
+href="#x1-130003" id="QQ2-1-13">Recording and playing</a></span>
+<br />    <span class="sectionToc" >3.1 <a 
+href="#x1-140003.1" id="QQ2-1-14">Sound driver selection</a></span>
+<br />    <span class="sectionToc" >3.2 <a 
+href="#x1-150003.2" id="QQ2-1-15">Input (recording) and output (playing) selection</a></span>
+<br />    <span class="sectionToc" >3.3 <a 
+href="#x1-160003.3" id="QQ2-1-16">The Transport Toolbar</a></span>
+<br />    <span class="sectionToc" >3.4 <a 
+href="#x1-170003.4" id="QQ2-1-17">Using keyboard shorcuts</a></span>
+<br />    <span class="sectionToc" >3.5 <a 
+href="#x1-180003.5" id="QQ2-1-18">Measuring your latency</a></span>
+<br />    <span class="sectionToc" >3.6 <a 
+href="#x1-190003.6" id="QQ2-1-19">Timer recording</a></span>
+<br />    <span class="sectionToc" >3.7 <a 
+href="#x1-200003.7" id="QQ2-1-20">Playing slower/faster</a></span>
+<br />    <span class="sectionToc" >3.8 <a 
+href="#x1-210003.8" id="QQ2-1-21">Time warping</a></span>
+<br />    <span class="sectionToc" >3.9 <a 
+href="#x1-220003.9" id="QQ2-1-22">Overdubbing</a></span>
+<br />   <span class="chapterToc" >4 <a 
+href="#x1-230004" id="QQ2-1-23">Analysis (Analyze Menu)</a></span>
+<br />    <span class="sectionToc" >4.1 <a 
+href="#x1-240004.1" id="QQ2-1-24">Contrast</a></span>
+<br />    <span class="sectionToc" >4.2 <a 
+href="#x1-250004.2" id="QQ2-1-25">Clipping ocurrency</a></span>
+<br />    <span class="sectionToc" >4.3 <a 
+href="#x1-260004.3" id="QQ2-1-26">Frequency analysis</a></span>
+<br />    <span class="sectionToc" >4.4 <a 
+href="#x1-270004.4" id="QQ2-1-27">Localize beats</a></span>
+<br />    <span class="sectionToc" >4.5 <a 
+href="#x1-280004.5" id="QQ2-1-28">Track splitting</a></span>
+<br />    <span class="sectionToc" >4.6 <a 
+href="#x1-290004.6" id="QQ2-1-29">Silence ﬁnder</a></span>
+<br />    <span class="sectionToc" >4.7 <a 
+href="#x1-300004.7" id="QQ2-1-30">Sound ﬁnder</a></span>
+<br />   <span class="chapterToc" >5 <a 
+href="#x1-310005" id="QQ2-1-31">Editing (Edit View and Tracks Menus)</a></span>
+<br />    <span class="sectionToc" >5.1 <a 
+href="#x1-320005.1" id="QQ2-1-32">Creating a new tracks</a></span>
+<br />    <span class="sectionToc" >5.2 <a 
+href="#x1-330005.2" id="QQ2-1-33">Splitting and joining tracks</a></span>
+<br />    <span class="sectionToc" >5.3 <a 
+href="#x1-340005.3" id="QQ2-1-34">Mixing tracks</a></span>
+<br />    <span class="sectionToc" >5.4 <a 
+href="#x1-350005.4" id="QQ2-1-35">Zooming the time scale</a></span>
+<br />    <span class="sectionToc" >5.5 <a 
+href="#x1-360005.5" id="QQ2-1-36">Zooming the amplitude scale</a></span>
+<br />    <span class="sectionToc" >5.6 <a 
+href="#x1-370005.6" id="QQ2-1-37">Resampling</a></span>
+                                                                  
+
+                                                                  
+<br />     <span class="subsectionToc" >5.6.1 <a 
+href="#x1-380005.6.1" id="QQ2-1-38">Project resampling</a></span>
+<br />     <span class="subsectionToc" >5.6.2 <a 
+href="#x1-390005.6.2" id="QQ2-1-39">Track resampling</a></span>
+<br />    <span class="sectionToc" >5.7 <a 
+href="#x1-400005.7" id="QQ2-1-40">Repeat</a></span>
+<br />   <span class="chapterToc" >6 <a 
+href="#x1-410006" id="QQ2-1-41">Built-in Amplitude eﬀects (Eﬀects Menu)</a></span>
+<br />    <span class="sectionToc" >6.1 <a 
+href="#x1-420006.1" id="QQ2-1-42">Scaling (ampliﬁcation/atenuation)</a></span>
+<br />    <span class="sectionToc" >6.2 <a 
+href="#x1-430006.2" id="QQ2-1-43">Normalization</a></span>
+<br />    <span class="sectionToc" >6.3 <a 
+href="#x1-440006.3" id="QQ2-1-44">Fadding</a></span>
+<br />    <span class="sectionToc" >6.4 <a 
+href="#x1-450006.4" id="QQ2-1-45">Temporal amplitude attenuation (duck)</a></span>
+<br />    <span class="sectionToc" >6.5 <a 
+href="#x1-460006.5" id="QQ2-1-46">Compression</a></span>
+<br />    <span class="sectionToc" >6.6 <a 
+href="#x1-470006.6" id="QQ2-1-47">Hard Limiter</a></span>
+<br />    <span class="sectionToc" >6.7 <a 
+href="#x1-480006.7" id="QQ2-1-48">Leveler</a></span>
+<br />    <span class="sectionToc" >6.8 <a 
+href="#x1-490006.8" id="QQ2-1-49">SC4</a></span>
+<br />    <span class="sectionToc" >6.9 <a 
+href="#x1-500006.9" id="QQ2-1-50">Bass and Treble</a></span>
+<br />    <span class="sectionToc" >6.10 <a 
+href="#x1-510006.10" id="QQ2-1-51">Change Pitch</a></span>
+<br />    <span class="sectionToc" >6.11 <a 
+href="#x1-520006.11" id="QQ2-1-52">Equalization</a></span>
+<br />    <span class="sectionToc" >6.12 <a 
+href="#x1-530006.12" id="QQ2-1-53">High Pass Filter</a></span>
+<br />    <span class="sectionToc" >6.13 <a 
+href="#x1-540006.13" id="QQ2-1-54">Low Pass Filter</a></span>
+<br />    <span class="sectionToc" >6.14 <a 
+href="#x1-550006.14" id="QQ2-1-55">Paulstretch</a></span>
+<br />    <span class="sectionToc" >6.15 <a 
+href="#x1-560006.15" id="QQ2-1-56">Phaser</a></span>
+<br />    <span class="sectionToc" >6.16 <a 
+href="#x1-570006.16" id="QQ2-1-57">Tremolo</a></span>
+<br />    <span class="sectionToc" >6.17 <a 
+href="#x1-580006.17" id="QQ2-1-58">Vocoder</a></span>
+<br />    <span class="sectionToc" >6.18 <a 
+href="#x1-590006.18" id="QQ2-1-59">Wahwah</a></span>
+<br />    <span class="sectionToc" >6.19 <a 
+href="#x1-600006.19" id="QQ2-1-60">Declicking</a></span>
+<br />    <span class="sectionToc" >6.20 <a 
+href="#x1-610006.20" id="QQ2-1-61">Reconstruct clipped regions</a></span>
+<br />    <span class="sectionToc" >6.21 <a 
+href="#x1-620006.21" id="QQ2-1-62">Noise Removal</a></span>
+<br />    <span class="sectionToc" >6.22 <a 
+href="#x1-630006.22" id="QQ2-1-63">Notch Filter</a></span>
+<br />    <span class="sectionToc" >6.23 <a 
+href="#x1-640006.23" id="QQ2-1-64">Repair</a></span>
+<br />    <span class="sectionToc" >6.24 <a 
+href="#x1-650006.24" id="QQ2-1-65">Truncate Silence</a></span>
+<br />    <span class="sectionToc" >6.25 <a 
+href="#x1-660006.25" id="QQ2-1-66">Change Tempo</a></span>
+<br />    <span class="sectionToc" >6.26 <a 
+href="#x1-670006.26" id="QQ2-1-67">Change Speed</a></span>
+<br />    <span class="sectionToc" >6.27 <a 
+href="#x1-680006.27" id="QQ2-1-68">Sliding Time Scale / Pitch Shift</a></span>
+<br />    <span class="sectionToc" >6.28 <a 
+href="#x1-690006.28" id="QQ2-1-69">Delay</a></span>
+<br />    <span class="sectionToc" >6.29 <a 
+href="#x1-700006.29" id="QQ2-1-70">Echo</a></span>
+<br />    <span class="sectionToc" >6.30 <a 
+href="#x1-710006.30" id="QQ2-1-71">Reverb</a></span>
+<br />    <span class="sectionToc" >6.31 <a 
+href="#x1-720006.31" id="QQ2-1-72">Invert</a></span>
+<br />    <span class="sectionToc" >6.32 <a 
+href="#x1-730006.32" id="QQ2-1-73">Reverse</a></span>
+<br />    <span class="sectionToc" >6.33 <a 
+href="#x1-740006.33" id="QQ2-1-74">Nyquist Prompt</a></span>
+   </div>
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter 1</span><br /><a 
+ id="x1-20001"></a>Foundations</h2>
+   <h3 class="sectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-30001.1"></a>Features (and limitations)</h3>
+     <ul class="itemize1">
+     <li class="itemize">Most common audio formats are supported (some of them directly such as
+     Ogg Vorbis, WAV (Windows wave), FLAC (Free Lossless Audio Codec)
+     or AIFF (Macinthosh Audio Interchange File Format) ... and others such
+     as MP3 (by means of LAME) or AAC (by means of FFMPEG)).
+     </li>
+     <li class="itemize">Sample  precission  can  be  16,  24  or  32  bits/sample.  Therefore,  it
+     cannot capture 8 bits/sample and therefore, use logarithmic quantization.
+     However, it can export these formats throught <a 
+href="http://www.mega-nerd.com/libsndfile/" >libsndﬁle</a>.
+     </li>
+     <li class="itemize">Several audio eﬀects.
+     </li>
+     <li class="itemize">Expandable  using  plug-ins  from  <a 
+href="http://www.ladspa.org/" >LADSPA  (Linux  Audio  Developer&#x2019;s
+     Simple Plugin Api)</a> and writting plug-ins using <a 
+href="http://manual.audacityteam.org/o/man/nyquist_prompt.html" >the Nyquist programming
+     language</a>.
+     </li>
+     <li class="itemize">Several analysis tools.
+     </li>
+     <li class="itemize">It is cross-platform and free (<a 
+href="http://audacity.sourceforge.net/about/license" >GPL</a>)!</li></ul>
+<!--l. 30--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-40001.2"></a>Terminology</h3>
+     <ul class="itemize1">
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/audacity_projects.html" ><span 
+class="ecbx-1000">Project</span></a>: A collection of tracks, clips, labels, amplitude envelope points,
+     gain and pan data.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/tracks.html" ><span 
+class="ecbx-1000">Track</span></a>: A sequence of audio samples.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/audacity_tracks_and_clips.html" ><span 
+class="ecbx-1000">Clip</span></a>: A pieze of a track.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/label_tracks.html" ><span 
+class="ecbx-1000">Label</span></a>: A name for a collection of samples of a track.
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/envelope_tool.html" ><span 
+class="ecbx-1000">Amplitude envelope point</span></a>: A way to control the amplitude of a track
+     along time.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/glossary.html#gain" ><span 
+class="ecbx-1000">Gain</span></a>: A measure of how much a signal is ampliﬁed. 0 dB means not
+     ampliﬁcation nor attenuation.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/glossary.html#pan" ><span 
+class="ecbx-1000">Pan</span></a>: Controls the spread of a stereo sound into the stereo channel.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/sync_locked_track_groups.html" ><span 
+class="ecbx-1000">Sync-Locked  Track  Groups</span></a>:  lets  you  keep  existing  audio  or  labels
+     synchronized with each other even when carrying out actions like inserting,
+     deleting or changing speed or tempo.
+     </li>
+     <li class="itemize"><span 
+class="ecbx-1000">Stereo track</span>: a 2-channel track where each channel is a independent
+     audio signal.
+     </li>
+     <li class="itemize"><span 
+class="ecbx-1000">Mono track</span>: a 2-channel track where there is only one audio signal (the
+     same for each channel).
+     </li>
+     <li class="itemize"><span 
+class="ecbx-1000">Left/Right track</span>: a 1-channel track with data for, only, the left/right
+     channel.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/label_tracks.html" ><span 
+class="ecbx-1000">Label track</span></a>: Used to reference points or regions in the project&#x2019;s audio
+     tracks.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/time_tracks.html" ><span 
+class="ecbx-1000">Time track</span></a>: It is used in conjunction with one or more audio tracks
+     to progressively increase or decrease playback speed (and pitch) over the
+     length of the audio project (only one Time traks per project is allowed).
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/playing_and_recording.html" ><span 
+class="ecbx-1000">Playback  Region</span></a>:  a  track  region  associated  with  a  shaded  selection
+     region  in  the  waveform  which  is  indicated  in  the  timeline  by  a  thin
+     horizontal gray bar with arrowheads on each end.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/faq_recording_how_to_s.html#overdub" ><span 
+class="ecbx-1000">Overdubbing</span></a>: is the process of record sound while the existing tracks
+     are played.
+     </li>
+     <li class="itemize"><span 
+class="ecbx-1000">Speed</span>: The number of samples/second played.
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize"><span 
+class="ecbx-1000">Tempo</span>: It refeers to the playing time but not changing the pitch.
+     </li>
+     <li class="itemize"><a 
+href="http://manual.audacityteam.org/o/man/glossary.html#pitch" ><span 
+class="ecbx-1000">Pitch</span></a>: The fundamental (ﬁrst one) frequency of a sound (usually, a music
+     note).
+     </li></ul>
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter 2</span><br /><a 
+ id="x1-50002"></a><a 
+href="http://manual.audacityteam.org/o/man/index_of_effects_generators_and_analyzers.html#generators" >Synthesis (Generate Menu)</a></h2>
+   <h3 class="sectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-60002.1"></a><a 
+href="http://manual.audacityteam.org/o/man/generate_menu.html#tone" >Tones</a></h3>
+<!--l. 114--><p class="noindent" >
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-6002x1">It is possible to generate pure tones (<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate-&#x003E;Tone</span></span></span>):
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-6004x1"><span 
+class="ecbx-1000">Sine</span>: A mathematical sine function.
+         </li>
+         <li 
+  class="enumerate" id="x1-6006x2"><span 
+class="ecbx-1000">Square</span>: A pure periodic squared window function. Notice that this
+         “tone” is physically impossible.
+         </li>
+         <li 
+  class="enumerate" id="x1-6008x3"><span 
+class="ecbx-1000">Square (no alias)</span>: Similar to the Square wave but does not produce
+         aliasing distortion.
+         </li>
+         <li 
+  class="enumerate" id="x1-6010x4"><span 
+class="ecbx-1000">Sawtooth</span>:  Has  a  gradual  upwards  slope  followed  by  a  shorter
+         downwards slope.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-6012x2">And time-decaying tones (<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> </span></span></span><a 
+href="http://manual.audacityteam.org/o/man/generate_menu.html#chirp" ><span 
+class="ectt-1000">Chirp</span></a>). Using this option you can
+     deﬁne a change in the frequency and the amplitude.</li></ol>
+<!--l. 130--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x1-70002.2"></a><a 
+href="http://manual.audacityteam.org/o/man/generate_menu.html#dtmf" >Dual-Tone Multi-Frequency (DTMF) tones</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> DTMF</span><span 
+class="ectt-1000"> Tones</span></span></span>.
+     </li>
+     <li class="itemize">For each tone you wish to generate, enter numbers from 0 to 9, lower case
+     letters from a to z, and the * and # characters. You can also enter the
+     four “priority” tones used by the US Military (upper case A, B, C and D).
+     Use the slider to select the ratio between the length of each tone in the
+     series and the length of the silences between them.</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 141--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2.3   </span> <a 
+ id="x1-80002.3"></a><a 
+href="http://manual.audacityteam.org/o/man/generate_menu.html#noise" >Noise</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Noise</span></span></span>.
+     </li>
+     <li class="itemize">Generates <a 
+href="http://en.wikipedia.org/wiki/White_noise" >white</a>, <a 
+href="http://en.wikipedia.org/wiki/Pink_noise" >pink</a> and <a 
+href="http://en.wikipedia.org/wiki/Brownian_noise" >brownian</a> noise during a period of time. Notice
+     that these noises have a diﬀerent frequency composition.</li></ul>
+<!--l. 152--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2.4   </span> <a 
+ id="x1-90002.4"></a><a 
+href="http://manual.audacityteam.org/o/man/generate_menu.html#silence" >Silence</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Silence</span></span></span>.
+     </li>
+     <li class="itemize">Generates an ausence of signal during aperiod or time.</li></ul>
+<!--l. 158--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2.5   </span> <a 
+ id="x1-100002.5"></a><a 
+href="http://manual.audacityteam.org/o/man/click_track.html" >Clicks train</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Click</span><span 
+class="ectt-1000"> Track</span></span></span>.
+     </li>
+     <li class="itemize">Generates a sequence of regular pulses at the selected tempo.</li></ul>
+<!--l. 164--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2.6   </span> <a 
+ id="x1-110002.6"></a><a 
+href="http://manual.audacityteam.org/o/man/pluck.html" >Pluck</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Pluck</span></span></span>.
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize">Generates a synthesized pluck tone with abrupt or gradual fade-out, and
+     selectable pitch corresponding to a MIDI note.</li></ul>
+<!--l. 171--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2.7   </span> <a 
+ id="x1-120002.7"></a><a 
+href="http://manual.audacityteam.org/o/man/risset_drum.html" >Risset Drum</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Risset</span><span 
+class="ectt-1000"> Drum</span></span></span>.
+     </li>
+     <li class="itemize">Produces a sound based on work by the composer of electronic music, Jean
+     Claude Risset.</li></ul>
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter 3</span><br /><a 
+ id="x1-130003"></a>Recording and playing</h2>
+   <h3 class="sectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-140003.1"></a>Sound driver selection</h3>
+     <ul class="itemize1">
+     <li class="itemize">By default, in Linux, Audacity will use ALSA which is the best choice for
+     avoiding latency issues during capturing audio.</li></ul>
+<!--l. 186--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-150003.2"></a>Input (recording) and output (playing) selection</h3>
+     <ul class="itemize1">
+     <li class="itemize">Depending  on  your  audio  hardware,  a  number  of  input  devices  are
+     available.  Again,  in  Linux  systems,  ALSA  native  “<span 
+class="ectt-1000">hw</span>”  devices  should
+     minimize latency problems.</li></ul>
+<!--l. 193--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x1-160003.3"></a><a 
+href="http://manual.audacityteam.org/o/man/transport_toolbar.html" >The Transport Toolbar</a></h3>
+     <ul class="itemize1">
+     <li class="itemize">The <a 
+href="http://manual.audacityteam.org/o/man/playing_and_recording.html" >Transport Toolbar</a> is the easiest way to control Audacity playback and
+     recording. From left to right we found:
+         <ol  class="enumerate1" >
+         <li 
+  class="enumerate" id="x1-16002x1">The <span 
+class="ecbx-1000">Pause </span>Button: press once to pause playback or recording then
+         once to resume.
+         </li>
+         <li 
+  class="enumerate" id="x1-16004x2">The <span 
+class="ecbx-1000">Play </span>Button: press once to start playback from the beggining.
+         </li>
+         <li 
+  class="enumerate" id="x1-16006x3">The <span 
+class="ecbx-1000">Stop </span>Button: interrupts the playing/recording.
+         </li>
+         <li 
+  class="enumerate" id="x1-16008x4">The <span 
+class="ecbx-1000">Skip to Start </span>Button: moves the time cursor to the start of the
+         project.
+         </li>
+         <li 
+  class="enumerate" id="x1-16010x5">The <span 
+class="ecbx-1000">Skip to End </span>Button: moves the time cursor to the end of the
+         project.
+                                                                  
+
+                                                                  
+         </li>
+         <li 
+  class="enumerate" id="x1-16012x6">The <span 
+class="ecbx-1000">Record </span>Button: start a new audio capture (you must push Stop
+         to stop this process).</li></ol>
+     </li></ul>
+<!--l. 214--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.4   </span> <a 
+ id="x1-170003.4"></a>Using keyboard shorcuts</h3>
+<!--l. 215--><p class="noindent" >
+     </p><ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-17002x1"><span 
+class="ecbx-1000">P</span>: Pause.
+     </li>
+     <li 
+  class="enumerate" id="x1-17004x2"><span 
+class="ecbx-1000">SPACE</span>: Plays or stop.
+     </li>
+     <li 
+  class="enumerate" id="x1-17006x3"><span 
+class="ecbx-1000">SHIFT+SPACE</span>: Plays in a loop.
+     </li>
+     <li 
+  class="enumerate" id="x1-17008x4"><span 
+class="ecbx-1000">HOME</span>: Skip to Start.
+     </li>
+     <li 
+  class="enumerate" id="x1-17010x5"><span 
+class="ecbx-1000">END</span>: Skip to End.
+     </li>
+     <li 
+  class="enumerate" id="x1-17012x6"><span 
+class="ecbx-1000">R</span>: Record.
+     </li>
+     <li 
+  class="enumerate" id="x1-17014x7"><span 
+class="ecbx-1000">SHIFT+R </span>or <span 
+class="ecbx-1000">SHIFT+Record</span>: Append-Record. Record starting from
+     the end of the selected (previously existing) track(s).
+     </li>
+     <li 
+  class="enumerate" id="x1-17016x8"><span 
+class="ecbx-1000">SHIFT+A</span>: Stop and set cursor. When stop a playback or a recording,
+     the  cursor  or  start  of  the  selection  is  set  to  the  position  where
+     playback/recording was stopped.</li></ol>
+<!--l. 230--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.5   </span> <a 
+ id="x1-180003.5"></a><a 
+href="http://manual.audacityteam.org/o/man/latency_test.html" >Measuring your latency</a></h3>
+                                                                  
+
+                                                                  
+     <ul class="itemize1">
+     <li class="itemize">Latency is an issue that depends mainly on your hardware (sound device
+     and        computer)        and        your        audio        buﬀer        size
+     (<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Edit</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Preferences</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Recording</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Audio</span><span 
+class="ectt-1000"> to</span><span 
+class="ectt-1000"> buffer</span></span></span>).
+     </li>
+     <li class="itemize">In order to minimize the latency, you can improve your hardware and/or
+     reduce the audio buﬀer size. However, reducing the audio buﬀer size can
+     produce underruns in the capturing process if the CPU is not able to
+     manage this conﬁguration requirement.
+     </li>
+     <li class="itemize">When                                                                        overdubbing
+     (see  Section <a 
+href="#x1-220003.9">3.9<!--tex4ht:ref: sec:overdubbing --></a>),  you  must  measure  and  set  your  current  lantency  in
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Edit</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Preferences</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Recording</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Latency</span><span 
+class="ectt-1000"> Correction</span></span></span>,
+     otherwise those audio tracks that have been previously captured will be
+     the synchronized with the new ones.
+     </li>
+     <li class="itemize">To ﬁnd out your latency you must capture a sound produced by your computer
+     and compute the delay between the time the sound has been produced and the
+     time the sound has been captured. To do this:
+         <ol  class="enumerate1" >
+         <li 
+  class="enumerate" id="x1-18002x1">In Selection Toolbar make sure that &#x0022;<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Snap</span><span 
+class="ectt-1000"> To</span></span></span>&#x0022; is set to &#x0022;<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Off</span></span></span>&#x0022;.
+         </li>
+         <li 
+  class="enumerate" id="x1-18004x2">Above the second group of numbers, make sure that “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Length</span></span></span>”  is
+         selected.
+         </li>
+         <li 
+  class="enumerate" id="x1-18006x3">Click on one of the downward-pointing arrows in the digits boxes to
+         the right of “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Snap</span><span 
+class="ectt-1000"> To</span></span></span>” and select “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">hh:mm:ss</span><span 
+class="ectt-1000"> +</span><span 
+class="ectt-1000"> milliseconds</span></span></span>”.
+         </li>
+         <li 
+  class="enumerate" id="x1-18008x4">Generate  2  bars  of  click  track  (<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Generate</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Click</span><span 
+class="ectt-1000"> Track</span></span></span>),  and
+         choose the default “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Ping</span></span></span>” sound.
+         </li>
+         <li 
+  class="enumerate" id="x1-18010x5">Click “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">OK</span></span></span>” to generate the click track.
+         </li>
+         <li 
+  class="enumerate" id="x1-18012x6">Now click the Record Button in the Transport Toolbar.
+         </li>
+         <li 
+  class="enumerate" id="x1-18014x7">You will get a new track. The top track is the original click track,
+         the bottom track is the looped-back recording.
+         </li>
+         <li 
+  class="enumerate" id="x1-18016x8">Zoom in so you can see one of the clicks in the top track and its
+         delayed version on the bottom track.
+                                                                  
+
+                                                                  
+         </li>
+         <li 
+  class="enumerate" id="x1-18018x9">You  can  now  read  the  latency  directly  from  the  second  panel  of
+         numbers.
+         </li>
+         <li 
+  class="enumerate" id="x1-18020x10">Write in the <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Edit</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Preferences</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Recording</span><span 
+class="ectt-1000"> tab</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Latency</span><span 
+class="ectt-1000"> Correction</span></span></span>
+         Entry the negative of this number.
+         </li>
+         <li 
+  class="enumerate" id="x1-18022x11">Repeat this experiment to check if the latency when overdubbing has
+         been “hidden”.</li></ol>
+     </li></ul>
+<!--l. 274--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.6   </span> <a 
+ id="x1-190003.6"></a>Timer recording</h3>
+     <ul class="itemize1">
+     <li class="itemize">The   <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Transport</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Timer</span><span 
+class="ectt-1000"> Record</span></span></span>  Dialog   allows   to   conﬁgure   a
+     temporized recording (starting date and time and duration).</li></ul>
+<!--l. 280--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.7   </span> <a 
+ id="x1-200003.7"></a>Playing slower/faster</h3>
+     <ul class="itemize1">
+     <li class="itemize">Use the <a 
+href="http://manual.audacityteam.org/o/man/transcription_toolbar.html" >Transcription Toolbar</a> to change the playing speed.</li></ul>
+<!--l. 287--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.8   </span> <a 
+ id="x1-210003.8"></a><a 
+href="http://manual.audacityteam.org/o/man/time_tracks.html" >Time warping</a></h3>
+     <ul class="itemize1">
+     <li class="itemize">Progressively increase or decrease playback speed (and pitch).</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 292--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3.9   </span> <a 
+ id="x1-220003.9"></a>Overdubbing</h3>
+     <ul class="itemize1">
+     <li class="itemize">By  default,  Audacity  record  and  plays  tracks  simultaneously.  See
+     <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Transport</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Overdub</span><span 
+class="ectt-1000"> (on/off)</span></span></span>.</li></ul>
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter 4</span><br /><a 
+ id="x1-230004"></a><a 
+href="http://manual.audacityteam.org/o/man/index_of_effects_generators_and_analyzers.html#analyzers" >Analysis (Analyze Menu)</a></h2>
+   <h3 class="sectionHead"><span class="titlemark">4.1   </span> <a 
+ id="x1-240004.1"></a><a 
+href="http://manual.audacityteam.org/o/man/contrast.html" >Contrast</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Analyze</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Contrast</span></span></span>.
+     </li>
+     <li class="itemize">Can  be  used  to  compare  the  audio  level  of  two  diﬀerent  parts  of  a
+     mono  track.  Suppossing  that  one  of  the  parts  is  the  <span 
+class="ecti-1000">foreground  </span>(that
+     obviously also has a background noise) and the other is the <span 
+class="ecti-1000">backgroud</span>
+     (with only background noise), this analysis can be useful to know if there
+     is enoung signal (20 dB or more) in the foreground section compared to
+     the background section.
+     </li>
+     <li class="itemize">Procedure:
+         <ol  class="enumerate1" >
+         <li 
+  class="enumerate" id="x1-24002x1">Select a region containing the signal (speech, for example). This is
+         the &#x0022;foreground&#x0022; selection.
+         </li>
+         <li 
+  class="enumerate" id="x1-24004x2">Click the “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Foreground</span></span></span>”&#x2019;s “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Measure</span><span 
+class="ectt-1000"> selection</span></span></span>” Button.
+         </li>
+         <li 
+  class="enumerate" id="x1-24006x3">Select a region containing only the background sound. This is the
+         background selection.
+         </li>
+         <li 
+  class="enumerate" id="x1-24008x4">Click the “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Background</span></span></span>”&#x2019;s “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Measure</span><span 
+class="ectt-1000"> selection</span></span></span>” Button.</li></ol>
+     </li></ul>
+<!--l. 321--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4.2   </span> <a 
+ id="x1-250004.2"></a><a 
+href="http://manual.audacityteam.org/o/man/find_clipping.html" >Clipping ocurrency</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Analyze</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Find</span><span 
+class="ectt-1000"> Clipping</span></span></span>.
+     </li>
+     <li class="itemize">Displays runs of clipped samples in a Label Track.
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize">You can control the length of the clipped runs (default 3 samples) and
+     the number of unclipped samples (default also 3) that must occur before
+     a sun of clipped samples will be determined.</li></ul>
+<!--l. 330--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4.3   </span> <a 
+ id="x1-260004.3"></a><a 
+href="http://manual.audacityteam.org/o/man/plot_spectrum.html" >Frequency analysis</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Analyze</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Plot</span><span 
+class="ectt-1000"> spectrum</span></span></span>.
+     </li>
+     <li class="itemize">Graphs the spectral density function of the sound.
+     </li>
+     <li class="itemize">You can choose between:
+         <ol  class="enumerate1" >
+         <li 
+  class="enumerate" id="x1-26002x1"><span 
+class="ecbx-1000">Spectral analysis</span>: A genuine Fourier analysis.
+         </li>
+         <li 
+  class="enumerate" id="x1-26004x2"><span 
+class="ecbx-1000">Autocorrelation</span>: A measure of the redundancy of the signal.
+         </li>
+         <li 
+  class="enumerate" id="x1-26006x3"><span 
+class="ecbx-1000">Cepstrum</span>: The power cepstrum
+         <!--l. 338--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math>
+         (of a signal) is the squared magnitude of the Fourier transform of the
+         logarithm of the squared magnitude of the Fourier transform of a signal.
+         Mathematically: <table class="equation-star"><tr><td>
+         <!--l. 342--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                                    <mi 
+>C</mi> <mo 
+class="MathClass-rel">=</mo> <mo 
+class="MathClass-rel">|</mo><msup><mrow 
+><mi 
+mathvariant="bold-script">ℱ</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow></msup 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mo class="qopname">log</mo><!--nolimits--></mrow><mrow 
+>
+<mn>2</mn></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mo 
+class="MathClass-rel">|</mo><mi 
+mathvariant="bold-script">ℱ</mi><msup><mrow 
+><mo 
+class="MathClass-rel">|</mo></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow><msup><mrow 
+><mo 
+class="MathClass-rel">|</mo></mrow><mrow 
+><mn>2</mn></mrow></msup 
+>
+</math></td></tr></table>
+                                                                  
+
+                                                                  
+         <!--l. 345--><p class="noindent" >Physically, the cepstum resents the rate of change in the diﬀerent
+         spectrum bands. It&#x2019;s particularly useful for properties of vocal
+         tracks and is used, for example, to identify speakers by their voice
+         characteristics.</p></li></ol>
+     </li></ul>
+<!--l. 352--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4.4   </span> <a 
+ id="x1-270004.4"></a><a 
+href="http://manual.audacityteam.org/o/man/beat_finder.html" >Localize beats</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Analyze</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Beat</span><span 
+class="ectt-1000"> Finder</span></span></span>.
+     </li>
+     <li class="itemize">Place labels at beats which are much louder than the surrounding audio.</li></ul>
+<!--l. 359--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4.5   </span> <a 
+ id="x1-280004.5"></a><a 
+href="http://manual.audacityteam.org/o/man/regular_interval_labels.html" >Track splitting</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Analyze</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Regular</span><span 
+class="ectt-1000"> Interval</span><span 
+class="ectt-1000"> Labels</span></span></span>.
+     </li>
+     <li class="itemize">Places point labels in a label track so as to divide the associated audio
+     into smaller, equally-sized segments.</li></ul>
+<!--l. 366--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4.6   </span> <a 
+ id="x1-290004.6"></a><a 
+href="http://manual.audacityteam.org/o/man/silence_finder_and_sound_finder.html#silence" >Silence ﬁnder</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Analyze</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Silence</span><span 
+class="ectt-1000"> Finder</span></span></span>.
+     </li>
+     <li class="itemize">Divides up a track by placing point labels inside areas of silence.</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 372--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4.7   </span> <a 
+ id="x1-300004.7"></a><a 
+href="http://manual.audacityteam.org/o/man/silence_finder_and_sound_finder.html#sound" >Sound ﬁnder</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Analyze</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Sound</span><span 
+class="ectt-1000"> Finder</span></span></span>.
+     </li>
+     <li class="itemize">Divides up a track by placing region labels for areas of sound that are
+     separated by silence.</li></ul>
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter 5</span><br /><a 
+ id="x1-310005"></a>Editing (Edit View and Tracks Menus)</h2>
+   <h3 class="sectionHead"><span class="titlemark">5.1   </span> <a 
+ id="x1-320005.1"></a>Creating a new tracks</h3>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="ecbx-1000">Mono track</span>: go to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Tracks</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Add</span><span 
+class="ectt-1000"> new</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Audio</span><span 
+class="ectt-1000"> Track</span></span></span>.
+     </li>
+     <li class="itemize"><span 
+class="ecbx-1000">Stereo track</span>: go to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Tracks</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Add</span><span 
+class="ectt-1000"> new</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Stereo</span><span 
+class="ectt-1000"> Track</span></span></span>.
+     </li>
+     <li class="itemize"><span 
+class="ecbx-1000">Label track</span>: go to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Tracks</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Add</span><span 
+class="ectt-1000"> new</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Label</span><span 
+class="ectt-1000"> Track</span></span></span>.</li></ul>
+<!--l. 391--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5.2   </span> <a 
+ id="x1-330005.2"></a><a 
+href="http://manual.audacityteam.org/o/man/splitting_and_joining_stereo_tracks.html" >Splitting and joining tracks</a></h3>
+     <ul class="itemize1">
+     <li class="itemize">Using the <a 
+href="http://manual.audacityteam.org/o/man/track_drop_down_menu.html" >Track Drop-Down menu</a> you can:
+         <ol  class="enumerate1" >
+         <li 
+  class="enumerate" id="x1-33002x1">Split a stereo track into separate tracks for left and right channels
+         after choosing <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Track</span><span 
+class="ectt-1000"> Drop-Down</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Split</span><span 
+class="ectt-1000"> Stereo</span><span 
+class="ectt-1000"> Track</span></span></span>.
+         </li>
+         <li 
+  class="enumerate" id="x1-33004x2">Split a stereo track into two separate mono tracks after selecting
+         <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Track</span><span 
+class="ectt-1000"> Drop-Down</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Stereo</span><span 
+class="ectt-1000"> to</span><span 
+class="ectt-1000"> Mono</span></span></span>.
+         </li>
+         <li 
+  class="enumerate" id="x1-33006x3">Swap the channels in a stereo track.
+         </li>
+         <li 
+  class="enumerate" id="x1-33008x4"><a 
+href="http://manual.audacityteam.org/o/man/audio_tracks.html" >Join two mono, left or right tracks into one stereo track</a>, by selecting
+         <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Track</span><span 
+class="ectt-1000"> Drop-Down</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Make</span><span 
+class="ectt-1000"> Stereo</span><span 
+class="ectt-1000"> Track</span></span></span>..</li></ol>
+     </li></ul>
+<!--l. 411--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5.3   </span> <a 
+ id="x1-340005.3"></a><a 
+href="http://manual.audacityteam.org/o/man/tracks_menu.html#mix" >Mixing tracks</a></h3>
+                                                                  
+
+                                                                  
+     <ul class="itemize1">
+     <li class="itemize">When you reproduce (push the Play Button) a project, all tracks are mixed
+     together in order to play them, but you don&#x2019;t have a track that can be
+     written into a stereo audio ﬁle with the result of our project.
+     </li>
+     <li class="itemize">The <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Mix</span><span 
+class="ectt-1000"> and</span><span 
+class="ectt-1000"> Render</span></span></span> Option of the <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Tracks</span></span></span> Menu explicitly mixes down
+     all selected tracks to a single mono or stereo track. The resulting track
+     (called “<span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Mix</span></span></span>”) replaces the selected tracks and is placed underneath any
+     tracks that were not mixed and rendered.
+     </li>
+     <li class="itemize">It  is  possible  also  to  mix  and  render  to  a  new  track  by  using
+     CTRL+SHIFT+M.</li></ul>
+<!--l. 426--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5.4   </span> <a 
+ id="x1-350005.4"></a><a 
+href="http://manual.audacityteam.org/o/man/zooming.html" >Zooming the time scale</a></h3>
+     <ul class="itemize1">
+     <li class="itemize">To zoom in, position the mouse pointer over a track and left-click. To
+     zoom out, shift-click or click the right mouse button.</li></ul>
+<!--l. 433--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5.5   </span> <a 
+ id="x1-360005.5"></a><a 
+href="http://manual.audacityteam.org/o/man/zooming.html" >Zooming the amplitude scale</a></h3>
+     <ul class="itemize1">
+     <li class="itemize">Hover the mouse over the vertical ruler of a track, and the pointer changes
+     to a magnifying glass, indicating you can zoom vertically.</li></ul>
+<!--l. 442--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5.6   </span> <a 
+ id="x1-370005.6"></a>Resampling</h3>
+     <ul class="itemize1">
+     <li class="itemize">Resampling is usually used to match a given audio format (such as the
+     CD quality audio).
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize">However, resampling increments the number of samples (and therefore the
+     amount of memory) but not increases the quality of the sound.</li></ul>
+<!--l. 452--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">5.6.1   </span> <a 
+ id="x1-380005.6.1"></a><a 
+href="http://manual.audacityteam.org/o/man/tracks_menu.html#mix" >Project resampling</a></h4>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Tracks</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Resample</span></span></span> ... and select the new sampling rate.</li></ul>
+<!--l. 457--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">5.6.2   </span> <a 
+ id="x1-390005.6.2"></a>Track resampling</h4>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Audio</span><span 
+class="ectt-1000"> Track</span><span 
+class="ectt-1000"> Pop-up</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Set</span><span 
+class="ectt-1000"> Rate</span></span></span> ... and select the new sampling rate.</li></ul>
+<!--l. 462--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">5.7   </span> <a 
+ id="x1-400005.7"></a><a 
+href="http://manual.audacityteam.org/o/man/repeat.html" >Repeat</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Repeat</span></span></span>.
+     </li>
+     <li class="itemize">Repeats the selection the speciﬁed number of times.</li></ul>
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter 6</span><br /><a 
+ id="x1-410006"></a>Built-in Amplitude eﬀects (Eﬀects Menu)</h2>
+   <h3 class="sectionHead"><span class="titlemark">6.1   </span> <a 
+ id="x1-420006.1"></a><a 
+href="http://manual.audacityteam.org/o/man/amplify.html" >Scaling (ampliﬁcation/atenuation)</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Amplify</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Amplification</span><span 
+class="ectt-1000"> (dB)</span></span></span>.
+     </li>
+     <li class="itemize">Similar to move the potentiometer of your ampliﬁer.
+     </li>
+     <li class="itemize">In a stereo track, the balance between the left and right channels will be
+     preserved.</li></ul>
+<!--l. 481--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.2   </span> <a 
+ id="x1-430006.2"></a><a 
+href="http://manual.audacityteam.org/o/man/normalize.html" >Normalization</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Normalize</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Normalize</span><span 
+class="ectt-1000"> maximum</span><span 
+class="ectt-1000"> amplitude</span><span 
+class="ectt-1000"> to</span></span></span>.
+     </li>
+     <li class="itemize">Similar to <a 
+href="http://manual.audacityteam.org/o/man/amplify_and_normalize.html" >scaling</a>, but removes the DC oﬀset.
+     </li>
+     <li class="itemize">In a stereo track, the balance between the left and right channels can be
+     preserved (uncheck Normalize stereo channel independetly).</li></ul>
+<!--l. 492--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.3   </span> <a 
+ id="x1-440006.3"></a><a 
+href="http://manual.audacityteam.org/o/man/fades.html#linearfade" >Fadding</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="ectt-1000">Effect -&#x003E; Fade In | Fade Out | </span><a 
+href="http://manual.audacityteam.org/o/man/adjustable_fade.html" ><span 
+class="ectt-1000">Adjustable Fade</span></a>.
+     </li>
+     <li class="itemize">Produces smooth starts and ﬁnishes in the audio tracks.</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 500--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.4   </span> <a 
+ id="x1-450006.4"></a><a 
+href="http://manual.audacityteam.org/o/man/auto_duck.html" >Temporal amplitude attenuation (duck)</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Duck</span></span></span>.
+     </li>
+     <li class="itemize">Reduces (ducks) the volume of one or more selected tracks whenever the
+     volume of a speciﬁed &#x0022;control track&#x0022; reaches a particular threshold level.</li></ul>
+<!--l. 508--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.5   </span> <a 
+ id="x1-460006.5"></a><a 
+href="http://manual.audacityteam.org/o/man/compressor.html" >Compression</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Compressor</span></span></span>.
+     </li>
+     <li class="itemize">Reduces the dynamic range of audio, ampliying the quiet sounds.</li></ul>
+<!--l. 514--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.6   </span> <a 
+ id="x1-470006.6"></a><a 
+href="http://manual.audacityteam.org/o/man/hard_limiter.html" >Hard Limiter</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Hard</span><span 
+class="ectt-1000"> Limiter</span></span></span>.
+     </li>
+     <li class="itemize">Such as the Compression Eﬀect, although clipping can happen.</li></ul>
+<!--l. 520--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.7   </span> <a 
+ id="x1-480006.7"></a><a 
+href="http://manual.audacityteam.org/o/man/leveler.html" >Leveler</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Leveler</span></span></span>.
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize">A simple, combined compressor and limiter eﬀect for reducing the dynamic
+     range of audio. It reduces the diﬀerence between loud and soft, making
+     the audio easier to hear in noisy environments or on small loudspeakers.</li></ul>
+<!--l. 529--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.8   </span> <a 
+ id="x1-490006.8"></a><a 
+href="http://manual.audacityteam.org/o/man/sc4.html" >SC4</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> SC4</span></span></span>.
+     </li>
+     <li class="itemize">Another stereo compressor.</li></ul>
+<!--l. 540--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.9   </span> <a 
+ id="x1-500006.9"></a><a 
+href="http://manual.audacityteam.org/o/man/bass_and_treble.html" >Bass and Treble</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Bass</span><span 
+class="ectt-1000"> and</span><span 
+class="ectt-1000"> Treble</span></span></span>.
+     </li>
+     <li class="itemize">Increases or decreases the lower frequencies and higher frequencies of your
+     audio independently.</li></ul>
+<!--l. 547--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.10   </span> <a 
+ id="x1-510006.10"></a><a 
+href="http://manual.audacityteam.org/o/man/change_pitch.html" >Change Pitch</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Change</span><span 
+class="ectt-1000"> Pitch</span></span></span>.
+     </li>
+     <li class="itemize">Change the pitch of a track without changing its tempo (speed).</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 553--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.11   </span> <a 
+ id="x1-520006.11"></a><a 
+href="http://manual.audacityteam.org/o/man/equalization.html" >Equalization</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Equalization</span></span></span>.
+     </li>
+     <li class="itemize">Allows you to increase the volume of some frequencies and reduce others.</li></ul>
+<!--l. 559--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.12   </span> <a 
+ id="x1-530006.12"></a><a 
+href="http://manual.audacityteam.org/o/man/high_pass_filter.html" >High Pass Filter</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> High</span><span 
+class="ectt-1000"> Pass</span><span 
+class="ectt-1000"> Filter</span></span></span>.
+     </li>
+     <li class="itemize">Removes frequencies above the cutoﬀ frequency.</li></ul>
+<!--l. 565--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.13   </span> <a 
+ id="x1-540006.13"></a><a 
+href="http://manual.audacityteam.org/o/man/low_pass_filter.html" >Low Pass Filter</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Low</span><span 
+class="ectt-1000"> Pass</span><span 
+class="ectt-1000"> Filter</span></span></span>.
+     </li>
+     <li class="itemize">Removes frequencies below the cutoﬀ frequency.</li></ul>
+<!--l. 572--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.14   </span> <a 
+ id="x1-550006.14"></a><a 
+href="http://manual.audacityteam.org/o/man/paulstretch.html" >Paulstretch</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Paulstretch</span></span></span>.
+     </li>
+     <li class="itemize">Slow down audio without changing the pitch.</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 578--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.15   </span> <a 
+ id="x1-560006.15"></a><a 
+href="http://manual.audacityteam.org/o/man/phaser.html" >Phaser</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="ectt-1000">Effect -&#x003E; </span><a 
+href="http://en.wikipedia.org/wiki/Phaser_(effect)" ><span 
+class="ectt-1000">Phaser</span></a>.
+     </li>
+     <li class="itemize">Displaces frequencies of the audio and the displacement is controlled by a
+     low frequency sine signal.</li></ul>
+<!--l. 585--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.16   </span> <a 
+ id="x1-570006.16"></a><a 
+href="http://manual.audacityteam.org/o/man/tremolo.html" >Tremolo</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Tremolo</span></span></span>.
+     </li>
+     <li class="itemize">Is the variation of the amplitude of the sound controlled by a sine signal
+     (amplitude modulation).</li></ul>
+<!--l. 592--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.17   </span> <a 
+ id="x1-580006.17"></a><a 
+href="http://manual.audacityteam.org/o/man/vocoder.html" >Vocoder</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Vocoder</span></span></span>.
+     </li>
+     <li class="itemize">Modulates the left channel of a stereo track with the right channel and
+     viceversa.</li></ul>
+<!--l. 598--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.18   </span> <a 
+ id="x1-590006.18"></a><a 
+href="http://manual.audacityteam.org/o/man/wahwah.htm" >Wahwah</a></h3>
+                                                                  
+
+                                                                  
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Wahwah</span></span></span>.
+     </li>
+     <li class="itemize">Uses a moving (back and forth in the frequency) bandpass ﬁlter to create
+     its sound controlled by a low frequency oscillator.</li></ul>
+<!--l. 605--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.19   </span> <a 
+ id="x1-600006.19"></a><a 
+href="http://manual.audacityteam.org/o/man/click_removal.html" >Declicking</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Click</span><span 
+class="ectt-1000"> Removal</span></span></span>.
+     </li>
+     <li class="itemize">Remove  clicks  (especially  suited  for  those  procuced  by  vinyl  records)
+     without damaging the rest of the audio.</li></ul>
+<!--l. 611--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.20   </span> <a 
+ id="x1-610006.20"></a><a 
+href="http://manual.audacityteam.org/o/man/clip_fix.html" >Reconstruct clipped regions</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Clip</span><span 
+class="ectt-1000"> Fix</span></span></span>.
+     </li>
+     <li class="itemize">Reconstruct clipped regions by interpolating the lost signal.</li></ul>
+<!--l. 617--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.21   </span> <a 
+ id="x1-620006.21"></a><a 
+href="http://manual.audacityteam.org/o/man/noise_removal.html" >Noise Removal</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Noise</span><span 
+class="ectt-1000"> Removal</span></span></span>.
+     </li>
+     <li class="itemize">Reduce constant background sounds such as “hum” (zumbido), “whistle”
+     (silvido), “whine” (gemido) or “buzz” (rumor), and moderate amounts of
+     “hiss” (siseo).</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 625--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.22   </span> <a 
+ id="x1-630006.22"></a><a 
+href="http://manual.audacityteam.org/o/man/notch_filter.html" >Notch Filter</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Notch</span><span 
+class="ectt-1000"> Filter</span></span></span>.
+     </li>
+     <li class="itemize">Sharply attenuates frequency-speciﬁc noise like mains hum or electrical
+     whistle with minimal damage to the remaining audio.</li></ul>
+<!--l. 632--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.23   </span> <a 
+ id="x1-640006.23"></a><a 
+href="http://manual.audacityteam.org/o/man/repair.html" >Repair</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Repair</span></span></span>.
+     </li>
+     <li class="itemize">Removes a very short region (up to 128 samples) of damaged or destroyed
+     audio, replacing it with an estimated region of audio based on what is
+     happening either side of the region.</li></ul>
+<!--l. 640--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.24   </span> <a 
+ id="x1-650006.24"></a><a 
+href="http://manual.audacityteam.org/o/man/truncate_silence.html" >Truncate Silence</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Truncate</span><span 
+class="ectt-1000"> Silence</span></span></span>.
+     </li>
+     <li class="itemize">Reduces the length of passages where the volume is below a speciﬁed level.</li></ul>
+<!--l. 646--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.25   </span> <a 
+ id="x1-660006.25"></a><a 
+href="http://manual.audacityteam.org/o/man/change_tempo.html" >Change Tempo</a></h3>
+                                                                  
+
+                                                                  
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Change</span><span 
+class="ectt-1000"> Tempo</span></span></span>.
+     </li>
+     <li class="itemize">Change the tempo of the selection without changing its pitch.</li></ul>
+<!--l. 652--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.26   </span> <a 
+ id="x1-670006.26"></a><a 
+href="http://manual.audacityteam.org/o/man/change_speed.html" >Change Speed</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Change</span><span 
+class="ectt-1000"> Speed</span></span></span>.
+     </li>
+     <li class="itemize">Change the speed of a track, aﬀecting its tempo, pitch and frequency
+     content.</li></ul>
+<!--l. 659--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.27   </span> <a 
+ id="x1-680006.27"></a><a 
+href="http://manual.audacityteam.org/o/man/sliding_time_scale_pitch_shift.html" >Sliding Time Scale / Pitch Shift</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Sliding</span><span 
+class="ectt-1000"> Time</span><span 
+class="ectt-1000"> Scale</span></span></span> / verb|Pitch Shift|.
+     </li>
+     <li class="itemize">Make a continuous change to the tempo and/or pitch of a selection by
+     choosing initial and/or ﬁnal change values.</li></ul>
+<!--l. 666--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.28   </span> <a 
+ id="x1-690006.28"></a><a 
+href="http://manual.audacityteam.org/o/man/delay.html" >Delay</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Delay</span></span></span>.
+     </li>
+     <li class="itemize">A multiple echo eﬀect.</li></ul>
+                                                                  
+
+                                                                  
+<!--l. 672--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.29   </span> <a 
+ id="x1-700006.29"></a><a 
+href="http://manual.audacityteam.org/o/man/echo.html" >Echo</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Echo</span></span></span>.
+     </li>
+     <li class="itemize">Repeats the audio you have selected again and again, normally softer each
+     time.</li></ul>
+<!--l. 678--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.30   </span> <a 
+ id="x1-710006.30"></a><a 
+href="http://manual.audacityteam.org/o/man/reverb.html" >Reverb</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Reverb</span></span></span>.
+     </li>
+     <li class="itemize">Adds reverberation (rapid, modiﬁed repetitions blended with the original
+     sound that gives an impression of ambience).</li></ul>
+<!--l. 685--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.31   </span> <a 
+ id="x1-720006.31"></a><a 
+href="http://manual.audacityteam.org/o/man/invert.html" >Invert</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Invert</span></span></span>.
+     </li>
+     <li class="itemize">Flips the audio samples upside-down, reversing their polarity. Notice that
+     if you play the original and the inverted audio together, both tracks will
+     be substracted.</li></ul>
+<!--l. 693--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.32   </span> <a 
+ id="x1-730006.32"></a><a 
+href="http://manual.audacityteam.org/o/man/reverse.html" >Reverse</a></h3>
+                                                                  
+
+                                                                  
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Reverse</span></span></span>.
+     </li>
+     <li class="itemize">Reverses the selected audio.</li></ul>
+<!--l. 699--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6.33   </span> <a 
+ id="x1-740006.33"></a><a 
+href="http://manual.audacityteam.org/o/man/nyquist_prompt.html" >Nyquist Prompt</a></h3>
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1000">Effect</span><span 
+class="ectt-1000"> -&#x003E;</span><span 
+class="ectt-1000"> Nyquist</span><span 
+class="ectt-1000"> Prompt</span></span></span>.
+     </li>
+     <li class="itemize">Write your own plug-ins created using the Nyquist programming language.</li></ul>
+    
+</body> 
+</html>
+                                                                  
+
+
